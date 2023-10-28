@@ -10,4 +10,4 @@
 
 **5) Run Expo:** ```npx expo```
 
-**6) Select the platform you wish to run the app on:**
+**6) Select the platform you wish to run the app on**
