@@ -11,3 +11,9 @@
 **5) Run Expo:** ```npx expo```
 
 **6) Select the platform you wish to run the app on**
+
+## Extras
+
+**https://docs.expo.dev/workflow/android-studio-emulator/**
+
+**https://docs.expo.dev/workflow/ios-simulator/**
