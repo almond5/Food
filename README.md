@@ -2,7 +2,7 @@
 
 **1) Download Android Studio or Xcode**
 
-**2) Setup up your emulator (web or ios or android)**
+**2) Setup up your emulator**
 
 **3) Clone the repo:** ```git clone https://github.com/almond5/Food/ .```
 
@@ -10,7 +10,7 @@
 
 **5) Run Expo:** ```npx expo```
 
-**6) Select the platform you wish to run the app on**
+**6) Select the platform you wish to run the app on (web or ios or android)**
 
 ## Extras
 
