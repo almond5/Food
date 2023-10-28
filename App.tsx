@@ -1,10 +1,40 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/Home';
+import { getDocs, collection } from 'firebase/firestore';
+import { FIRESTORE_DB } from './firebaseConfig';
 
-export default function App() {
+const App = () => {
   const Stack = createNativeStackNavigator();
+
+  useEffect(() => {
+    // Define the Firestore collection reference
+    const foodCollection = collection(FIRESTORE_DB, 'food');
+
+    // Function to fetch all documents in the 'food' collection
+    const fetchFoodData = async () => {
+      try {
+        const querySnapshot = await getDocs(foodCollection);
+
+        // Loop through the documents in the collection
+        querySnapshot.forEach((doc) => {
+          console.log(
+            'Document ID: ',
+            doc.id,
+            ' => Document Data: ',
+            doc.data()
+          );
+          // Here you can use doc.id and doc.data() as needed
+        });
+      } catch (error) {
+        console.error('Error fetching documents: ', error);
+      }
+    };
+
+    // Call the function to fetch data when the component mounts
+    fetchFoodData();
+  }, []);
 
   return (
     <NavigationContainer>
@@ -13,4 +43,6 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+export default App;
