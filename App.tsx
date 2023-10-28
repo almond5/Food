@@ -10,12 +10,12 @@ const App = () => {
 
   useEffect(() => {
     // Define the Firestore collection reference
-    const foodCollection = collection(FIRESTORE_DB, 'food');
+    const coll = collection(FIRESTORE_DB, 'Users');
 
     // Function to fetch all documents in the 'food' collection
     const fetchFoodData = async () => {
       try {
-        const querySnapshot = await getDocs(foodCollection);
+        const querySnapshot = await getDocs(coll);
 
         // Loop through the documents in the collection
         querySnapshot.forEach((doc) => {
